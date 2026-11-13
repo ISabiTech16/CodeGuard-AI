@@ -6,6 +6,37 @@
 >
 > **Get the full CodeGuard AI source code:** [Purchase on Gumroad](https://javacoder716.gumroad.com/l/codeguard-ai)
 
+**Want to evaluate before purchasing?** Clone the public repository, inspect the Java implementation, run the included tests, and review the screenshots. The complete application source code is distributed separately.
+
+[Explore the runnable Java sample](sample/test-outcome/)
+
+[Get the complete CodeGuard AI source code](https://javacoder716.gumroad.com/l/codeguard-ai)
+
+---
+
+## Public Preview vs Complete Product
+
+This repository is designed to help developers evaluate the engineering approach behind CodeGuard AI before purchasing.
+
+| Component | Public Repository | Complete Product |
+|---|---|---|
+| Product overview and documentation | Yes | Yes |
+| Application screenshots | Yes | Yes |
+| Runnable Java sample | Yes | Yes |
+| Sample unit tests | Yes | Yes |
+| Complete Spring Boot application | No | Yes |
+| Full AI review engine | No | Yes |
+| Complete GitHub integration | No | Yes |
+| Full dashboard | No | Yes |
+| Team rules and policy engine | No | Yes |
+| Complete application source code | No | Yes |
+
+The public repository is a technical preview. It is not a free edition or a complete alternative to the commercial product.
+
+You can inspect the included implementation and run its tests independently before deciding whether to purchase.
+
+**[Get the complete application source code](https://javacoder716.gumroad.com/l/codeguard-ai)**
+
 ---
 
 ## What it does
@@ -55,6 +86,8 @@ The following screenshots are from the running CodeGuard AI application.
 
 ![Test Quality Detection](docs/images/05-test-quality-detection.png)
 
+---
+
 ## What the full version includes
 
 The complete CodeGuard AI application includes:
@@ -76,6 +109,8 @@ The complete CodeGuard AI application includes:
 - Database schema.
 
 **Note:** These are full-product capabilities. This public repository does not contain the complete application source code.
+
+---
 
 ## How setup works
 
@@ -99,6 +134,64 @@ The complete installation instructions are provided with the full application.
 CodeGuard runs on your infrastructure.
 
 With Ollama, your code can remain within your own environment. If you choose OpenAI, Gemini, or Groq, the changed files and the context required for the review are sent to the selected provider, subject to that provider's terms and your configuration.
+
+---
+
+## Architecture overview
+
+At a high level, CodeGuard AI follows this pull-request review workflow:
+
+```mermaid
+flowchart TD
+    A[GitHub Pull Request] --> B[CodeGuard AI]
+    B --> C[Repository Context Analysis]
+    C --> D[Deterministic Checks]
+    C --> E[AI Analysis]
+    D --> F[Evidence Classification]
+    E --> F
+    F --> G[Configurable Merge Policy]
+    G --> H[Review Report]
+    H --> I[GitHub Review]
+    H --> J[Review Dashboard]
+    B -. Optional .-> K[Docker Test Validation]
+    K --> H
+```
+
+The diagram is a high-level conceptual overview of the review workflow, not a complete internal implementation diagram.
+
+## What to inspect before purchasing
+
+If you are evaluating CodeGuard AI as a developer or engineering team, these are useful starting points:
+
+| Area | What you can evaluate |
+|---|---|
+| Test outcome classification | How test execution results are classified |
+| Test-report parsing | How test reports are interpreted |
+| Unit tests | How the public sample's behavior is tested |
+| Evidence classification | How the product distinguishes verified and inferred findings |
+| Product screenshots | How the application presents review results |
+| Documentation | Product scope, deployment model and limitations |
+
+The runnable Java sample is particularly useful if you want to inspect the implementation rather than relying only on screenshots or marketing descriptions.
+
+## Sample review report
+
+The full application produces review findings and test-validation results as part of its review workflow.
+
+When evaluating a review, pay attention to:
+
+- The finding and its evidence classification.
+- Whether the relevant code was located.
+- The severity and confidence assigned.
+- The configured merge-policy decision.
+- The actual test execution status.
+- What CodeGuard did not verify.
+
+A finding marked as AI inference is not the same as a verified defect. Similarly, a test result should only be considered successful when the execution evidence supports that conclusion.
+
+The public repository does not claim that the sample test results establish the real-world accuracy of the complete application.
+
+---
 
 ## Repository structure
 
@@ -195,6 +288,8 @@ The sample was successfully compiled and tested using Java 21 and Maven.
 
 The test results demonstrate the behavior of the included sample module. They are not a claim about the full application's overall test coverage.
 
+---
+
 ## Limitations
 
 - AI findings and suggested fixes are advisory. Always review proposed changes before merging.
@@ -203,6 +298,66 @@ The test results demonstrate the behavior of the included sample module. They ar
 - The full application has no built-in authentication. Run it behind a VPN, reverse proxy, or private network.
 - CodeGuard is intended for self-hosted, single-team, private use, not as a public multi-tenant service.
 - The public repository contains only the documented preview and runnable sample, not the complete application.
+
+## Security and data-flow considerations
+
+CodeGuard AI is designed to run on infrastructure controlled by the user.
+
+Before deploying the full application, consider:
+
+- Restricting dashboard access through a VPN, reverse proxy or private network.
+- Using GitHub tokens with the minimum permissions required.
+- Keeping webhook secrets and AI-provider credentials out of source control.
+- Understanding which changed files and repository context are sent to an external AI provider.
+- Using Ollama when local model processing is preferred.
+- Reviewing Docker execution settings before testing untrusted pull-request code.
+- Understanding that enabling network access inside a test container is a security decision.
+
+The full application has no built-in authentication. Deployment security must be configured by the operator.
+
+---
+
+## Frequently asked questions
+
+### Is CodeGuard AI open source?
+
+No. This repository contains selected public preview materials and a runnable Java sample. The complete application source code is distributed separately through the commercial product.
+
+### Can I run the public sample?
+
+Yes. You can clone the repository and run the included Test Outcome Engine tests using JDK 21 and Maven.
+
+### Is the complete application hosted?
+
+No. CodeGuard AI is self-hosted software that you run on your own infrastructure.
+
+### Can I use local AI models?
+
+Yes. The full product supports Ollama, subject to your local hardware and model configuration.
+
+### Does CodeGuard AI require an external AI API?
+
+Not if you configure a supported local Ollama model. External AI providers may charge their own API fees.
+
+### Does CodeGuard AI guarantee bug-free code?
+
+No. AI findings and suggested fixes are advisory. Developers should inspect evidence and validate changes before merging.
+
+### Does the full application include authentication?
+
+No. It should be deployed behind a VPN, reverse proxy or private network.
+
+### Can I inspect the implementation before purchasing?
+
+Yes. The public repository includes a real Java sample module with its source code and tests, along with documentation and screenshots.
+
+### Where can I purchase the complete source code?
+
+You can purchase the complete application through Gumroad:
+
+[Get CodeGuard AI](https://javacoder716.gumroad.com/l/codeguard-ai)
+
+---
 
 ## Project status
 
@@ -216,3 +371,13 @@ The test results demonstrate the behavior of the included sample module. They ar
 The sample module and documentation in this repository are provided for review only. They may not be copied, redistributed, or used commercially without permission.
 
 The complete CodeGuard AI product is licensed under the terms provided with your purchase on Gumroad.
+
+---
+
+## Ready to evaluate CodeGuard AI?
+
+You can inspect the public Java implementation, run its tests, and review the product screenshots before purchasing.
+
+If the self-hosted approach, evidence-based review workflow and customization capabilities match your requirements, get the complete application source code.
+
+**[Purchase CodeGuard AI on Gumroad](https://javacoder716.gumroad.com/l/codeguard-ai)**
