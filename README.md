@@ -87,11 +87,13 @@ The following screenshots are from the running CodeGuard AI application.
 ![Test Quality Detection](docs/images/05-test-quality-detection.png)
 
 
-## 🎬 Product Demo
+
+## 🎬 CodeGuard AI Demo
 
 Watch CodeGuard AI review a GitHub pull request, identify a test failure, suggest a fix, apply it with developer approval, and run a fresh review to validate the result.
 
-[▶ Watch the CodeGuard AI Demo](docs/demo/codeguard-ai-demo.mp4)
+https://github.com/user-attachments/assets/5a130bac-574f-48bf-a0d8-0f796494c8bb
+
 
 
 ---
