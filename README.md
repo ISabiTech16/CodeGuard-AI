@@ -92,7 +92,7 @@ The following screenshots are from the running CodeGuard AI application.
 
 Watch CodeGuard AI review a GitHub pull request, identify a test failure, suggest a fix, apply it with developer approval, and run a fresh review to validate the result.
 
-
+[▶ Watch the CodeGuard AI Demo](demo-video/codeguard-demo-video.mp4)
 
 
 
